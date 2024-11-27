@@ -1,0 +1,337 @@
+:root {
+  --light-bg-1: #f5acac;
+  --light-bg-2: #ffd6a5;
+  --light-bg-3: #fdffb6;
+  --light-bg-4: #caffbf;
+  --light-bg-5: #9bf6ff;
+  --light-bg-6: #a0c4ff;
+  --light-bg-7: #bdb2ff;
+  --light-bg-8: #ffc6ff;
+  --light-bg-9: #ffdab9;
+
+  --dark-bg-1: #2c2c2c;
+  --dark-bg-2: #3a3a3a;
+  --dark-bg-3: #484848;
+  --dark-bg-4: #565656;
+  --dark-bg-5: #646464;
+  --dark-bg-6: #727272;
+  --dark-bg-7: #808080;
+  --dark-bg-8: #8e8e8e;
+  --dark-bg-9: #9c9c9c;
+
+  --font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-bg-1);
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg-1);
+  color: white;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+}
+
+.wrapper {
+  position: relative;
+  transform: skewY(-14deg);
+  width: 100%;
+}
+
+.wrapper li,
+button {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  height: 50px;
+  z-index: var(--i);
+  transition: 0.3s;
+  color: white;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper li::before,
+button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -40px;
+  width: 40px;
+  height: 50px;
+  transform-origin: right;
+  transform: skewY(45deg);
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.wrapper li::after,
+button::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50px;
+  top: -50px;
+  left: 0;
+  transform-origin: bottom;
+  transform: skewX(45deg);
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+li .input,
+button {
+  outline: none;
+  border: none;
+  color: black;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+li .input::placeholder {
+  color: black;
+}
+
+li:nth-child(1) .input,
+button:nth-child(1) {
+  background: var(--light-bg-1);
+}
+
+li:nth-child(2) .input,
+button:nth-child(2) {
+  background: var(--light-bg-2);
+}
+
+li:nth-child(3) .input,
+button:nth-child(3) {
+  background: var(--light-bg-3);
+}
+
+li:nth-child(4) .input,
+button:nth-child(4) {
+  background: var(--light-bg-4);
+}
+
+li:nth-child(5) .input,
+button:nth-child(5) {
+  background: var(--light-bg-5);
+}
+
+li:nth-child(6) .input,
+button:nth-child(6) {
+  background: var(--light-bg-6);
+}
+
+li:nth-child(7) .input,
+button:nth-child(7) {
+  background: var(--light-bg-7);
+}
+
+li:nth-child(8) .input,
+button:nth-child(8) {
+  background: var(--light-bg-8);
+}
+
+body.dark-mode li:nth-child(1) .input,
+body.dark-mode button:nth-child(1) {
+  background: var(--dark-bg-1);
+}
+
+body.dark-mode li:nth-child(2) .input,
+body.dark-mode button:nth-child(2) {
+  background: var(--dark-bg-2);
+}
+
+body.dark-mode li:nth-child(3) .input,
+body.dark-mode button:nth-child(3) {
+  background: var(--dark-bg-3);
+}
+
+body.dark-mode li:nth-child(4) .input,
+body.dark-mode button:nth-child(4) {
+  background: var(--dark-bg-4);
+}
+
+body.dark-mode li:nth-child(5) .input,
+body.dark-mode button:nth-child(5) {
+  background: var(--dark-bg-5);
+}
+
+body.dark-mode li:nth-child(6) .input,
+body.dark-mode button:nth-child(6) {
+  background: var(--dark-bg-6);
+}
+
+body.dark-mode li:nth-child(7) .input,
+body.dark-mode button:nth-child(7) {
+  background: var(--dark-bg-7);
+}
+
+body.dark-mode li:nth-child(8) .input,
+body.dark-mode button:nth-child(8) {
+  background: var(--dark-bg-8);
+}
+
+.wrapper li:hover,
+button:hover {
+  transform: translateX(-20px);
+}
+
+button:active {
+  transform: translateX(0px);
+}
+
+.input.error {
+  border: 2px solid red;
+}
+
+.toggle-switch {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.switch-label {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid #e0e0e0;
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: 0.3s;
+  background-color: #8c9eff;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: #8c9eff;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(50px);
+  background-color: #3d5afe;
+}
+
+body.dark-mode .toggle-switch .slider {
+  background-color: #8c9eff;
+}
+
+body.dark-mode .toggle-switch .slider::before {
+  background-color: #3d5afe;
+}
+
+/* Position the toggle in the top-left corner */
+.container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.toggle {
+  background-color: #f5acac;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1;
+}
+
+.something {
+  display: none;
+}
+
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 500ms;
+}
+
+.icon--sun {
+  transform: scale(0);
+  color: rgb(28, 28, 22);
+}
+
+.icon--moon {
+  transition-delay: 200ms;
+  color: yellow;
+}
+
+#switch:checked + .icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+  transition-delay: 200ms;
+  transform: scale(1) rotate(360deg);
+}
+
+.slider {
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212; /* Dark mode background */
+  color: #e0e0e0; /* Dark mode text color */
+}
+
+.input {
+  background-color: #fff; /* Light mode input background */
+  border: 1px solid #ccc; /* Light mode input border */
+}
+
+body.dark-mode .input {
+  background-color: #333; /* Dark mode input background */
+  border: 1px solid #555; /* Dark mode input border */
+  color: #e0e0e0; /* Dark mode input text color */
+}
+
+body.dark-mode .toggle {
+  background-color: #3a3a3a;
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.1);
+}
+
+
